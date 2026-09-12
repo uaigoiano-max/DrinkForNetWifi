@@ -49,6 +49,8 @@ A landing page foi desenhada para funcionar como uma interface de evento: uma pe
 
 > As imagens acima são uma demonstração real da interface incluída neste repositório. Nome, fotos, links, cores, textos e regras de acesso podem ser personalizados seguindo o [guia de personalização](#-como-personalizar-o-projeto).
 
+Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). As indicações de roteador, powerbank e cabos ficam no [guia de hardware recomendado](docs/RECOMMENDED_HARDWARE.md).
+
 ### O que o visitante vê
 
 ```text
@@ -162,6 +164,11 @@ wifi-free/
 ├── style.css            # Sistema visual, responsividade e animações
 ├── script.js            # Galeria, validação e interações
 ├── config.js            # Nome, links, fotos e textos personalizáveis
+├── QUICKSTART.md        # Instalação rápida
+├── docs/RECOMMENDED_HARDWARE.md
+│                         # Roteador, powerbank e cabos
+├── scripts/validate-project.mjs
+│                         # Validação local dos arquivos críticos
 ├── minha-foto.jpg       # Foto principal de identificação
 ├── foto-2.jpg           # Foto complementar
 ├── foto-3.jpg           # Foto complementar
@@ -383,6 +390,8 @@ O servidor local valida a interface, mas não simula a autenticação real. O te
 
 ## 🛰️ Guia de hardware recomendado
 
+> A lista completa, com imagens, links, instruções de alimentação e cabos, está em [docs/RECOMMENDED_HARDWARE.md](docs/RECOMMENDED_HARDWARE.md). A seção abaixo mantém o contexto técnico da escolha e da operação.
+
 O projeto foi pensado para ser transportável. A internet de origem pode mudar; a experiência do visitante permanece a mesma.
 
 > “Recomendado” não significa que qualquer modelo tenha todas as funções prontas. Antes da compra, confirme: captive portal personalizado, vouchers com expiração, armazenamento de arquivos, modo de autenticação e suporte ao número de clientes esperado.
@@ -583,6 +592,16 @@ Na prática, ele pode:
 - Distribuir uma conexão Starlink instalada em outro ponto.
 - Criar uma célula de internet otimizada ao redor da operação.
 - Manter a landing page e o fluxo de autenticação consistentes entre eventos.
+
+---
+
+## 💡 Próximos passos: acesso por doação via Pix
+
+Uma evolução planejada é permitir que a pessoa escolha entre a troca por uma bebida e uma **doação via Pix** para liberar o acesso à rede. Essa funcionalidade ainda não está implementada.
+
+Para fazer isso corretamente, será necessário definir um fluxo seguro de confirmação do pagamento, evitar comprovantes falsos, proteger dados pessoais e integrar a confirmação ao captive portal sem expor chaves Pix ou credenciais no código público. Não use uma chave Pix real nem prometa liberação automática com base apenas em um formulário até que essa integração esteja pronta e testada.
+
+Quem quiser colaborar com essa futura funcionalidade pode enviar uma mensagem privada ao mantenedor do projeto explicando sua experiência e a forma de contribuição pretendida. Sugestões de arquitetura, testes, segurança e integração são bem-vindas.
 
 ---
 
