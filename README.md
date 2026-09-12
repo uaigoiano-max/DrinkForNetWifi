@@ -1,5 +1,7 @@
 # DrinkForNet Wi-Fi 🚀
 
+[Português](README.md) · [English](README.en.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-c6ff4d?style=flat-square&labelColor=0a1120)](LICENSE)
 [![HTML](https://img.shields.io/badge/HTML-static-c6ff4d?style=flat-square&labelColor=0a1120)](wifi-free.html)
 [![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-c6ff4d?style=flat-square&labelColor=0a1120)](script.js)
