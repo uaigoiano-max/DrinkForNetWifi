@@ -413,6 +413,62 @@ O **Cudy TR1200** é uma opção compacta para prototipagem e eventos pequenos. 
 
 **Antes de comprar:** o roteador, sozinho, não garante vouchers nem captive portal. Confirme a versão do firmware e valide a instalação do openNDS, Nodogsplash ou outra solução equivalente. Para muitos clientes, cobertura ampla ou operação crítica, use um equipamento mais robusto e faça um teste de carga antes do evento.
 
+### Produto indicado: Anker Laptop Power Bank 25.000 mAh
+
+Para operações móveis, o **Anker Laptop Power Bank de 25.000 mAh e até 165 W** é uma opção premium para alimentar o roteador e também recarregar celulares, notebooks e outros acessórios. O produto possui USB-C, cabos integrados e visor de carga.
+
+<p align="center">
+  <a href="https://link.amazon/B07Syolji" target="_blank" rel="nofollow sponsored noopener">
+    <img src="docs/hardware/anker-165w-powerbank.png" alt="Powerbank Anker de 25.000 mAh com visor de carga e cabos integrados" width="420">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://link.amazon/B07Syolji" target="_blank" rel="nofollow sponsored noopener"><strong>Ver o powerbank Anker na Amazon</strong></a>
+</p>
+
+> **Aviso de transparência:** este é um link de afiliado da Amazon. Se você comprar por ele, posso receber uma comissão sem custo adicional para você. Preços, estoque, impostos, vendedor e condições podem mudar; confira as informações na página da Amazon antes da compra.
+
+#### Como usar com o Cudy TR1200
+
+O powerbank tem potência muito superior à necessária para um roteador de viagem. Isso não significa que ele “empurra” 165 W para o Cudy: o dispositivo conectado consome apenas a corrente e a tensão que aceita. Mesmo assim, confirme a tensão indicada na etiqueta ou no manual do seu TR1200 antes de ligar.
+
+Para a primeira instalação, use o procedimento mais conservador:
+
+1. Carregue completamente o powerbank antes do evento.
+2. Conecte a saída **USB-A de 5 V** do powerbank à entrada USB-C de alimentação do Cudy usando um cabo USB-A para USB-C.
+3. Ligue o roteador e aguarde a inicialização completa.
+4. Teste a rede com dois ou mais celulares e mantenha o roteador funcionando por algumas horas.
+5. Verifique se não há reinicializações, aquecimento excessivo ou perda de conexão.
+6. Confirme se o powerbank permanece ligado; alguns modelos desligam quando detectam consumo muito baixo.
+
+A saída USB-C também pode funcionar, mas depende da negociação USB Power Delivery entre os equipamentos. Não use adaptadores que forcem 9 V, 12 V, 15 V ou 20 V na entrada do Cudy. Se o manual do seu roteador especificar outra tensão, siga o manual e não esta orientação genérica.
+
+> **Compatibilidade:** esta combinação é **compatível em princípio**, mas deve ser validada com o seu lote e firmware do TR1200 antes de uma operação pública. O README não substitui as especificações elétricas do fabricante.
+
+#### Cabos recomendados
+
+O cabo é parte importante da instalação. Um cabo ruim pode causar queda de tensão, reinicialização do roteador ou carregamento intermitente.
+
+| Uso | Cabo indicado | Observação |
+| --- | --- | --- |
+| Alimentação mais conservadora | USB-A para USB-C, 1 m ou 1,5 m | Preferir cabo reforçado e compatível com 5 V |
+| Alimentação via USB-C PD | USB-C para USB-C, 100 W | Usar somente após confirmar a tensão aceita pelo roteador |
+| Reserva para celulares | USB-C para USB-C, 60 W ou 100 W | Bom para carregar celulares e acessórios |
+| Emergência | USB-A para USB-C | Útil caso a negociação PD não funcione |
+
+Prefira cabos de **Anker, UGREEN ou Baseus**, com conectores firmes, revestimento trançado e potência claramente informada. Para o Cudy, um cabo de 100 W não torna o roteador mais potente: ele apenas oferece margem elétrica e construção adequada. Não é necessário comprar cabo de 240 W para essa aplicação.
+
+#### Checklist de segurança da alimentação
+
+- [ ] A tensão de entrada do Cudy foi confirmada no manual ou na etiqueta.
+- [ ] O cabo não está danificado, frouxo ou excessivamente longo.
+- [ ] O roteador funcionou por algumas horas sem reiniciar.
+- [ ] O powerbank não aquece de forma anormal.
+- [ ] O powerbank não desliga por baixo consumo.
+- [ ] Há um cabo reserva disponível.
+- [ ] O teste foi repetido com o mesmo captive portal usado no evento.
+
 ### Matriz mínima de compatibilidade
 
 | Capacidade | Necessária? | Como validar |
