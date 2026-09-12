@@ -22,3 +22,12 @@ build/
 # Temporary browser preview profiles
 .preview-profile/
 .preview-profile2/
+
+# Operational data that must never be committed
+*.key
+*.pem
+*.crt
+secrets/
+vouchers/
+exports/
+logs/

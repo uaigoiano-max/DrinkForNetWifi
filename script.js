@@ -1,5 +1,91 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const config =
+        window.DrinkForNetConfig || {};
+
+    function applyConfiguration() {
+        const textValues = [
+            [".brand span", config.brandName],
+            [".network-status", config.networkLabel],
+            [".profile-name", config.hostName],
+            [".profile-nickname", config.nickname],
+            [".hero-label", config.heroLabel],
+            [".hero-description", config.heroDescription],
+            [".access-copy-values strong:first-child", config.drinkRule],
+            [".access-copy-values .accent-text", config.drinkRuleAccent],
+            [".access-promise > p", config.ruleDescription],
+            [".footer span:nth-child(2)", config.footerOffer],
+            [".gallery-caption", config.galleryCaption]
+        ];
+
+        textValues.forEach(function (entry) {
+            const element = document.querySelector(entry[0]);
+
+            if (element && entry[1]) {
+                element.textContent = entry[1];
+            }
+        });
+
+        const title = document.querySelector("h1");
+
+        if (title) {
+            title.childNodes[0].textContent =
+                (config.heroQuestion || "Quer internet?") + "\n";
+            title.querySelector("span").textContent =
+                config.heroAnswer || "Me encontre.";
+        }
+
+        const locationDescriptions =
+            document.querySelectorAll(".location-description");
+
+        if (locationDescriptions[0] && config.locationOnFloor) {
+            locationDescriptions[0].textContent = config.locationOnFloor;
+        }
+
+        if (locationDescriptions[1] && config.locationBackstage) {
+            locationDescriptions[1].textContent = config.locationBackstage;
+        }
+
+        const socialUrls = [
+            config.socialLinks && config.socialLinks.instagram,
+            config.socialLinks && config.socialLinks.x,
+            config.socialLinks && config.socialLinks.spotify
+        ];
+
+        document.querySelectorAll(".social-link").forEach(
+            function (link, index) {
+                const url = socialUrls[index];
+
+                if (!url) {
+                    link.remove();
+                    return;
+                }
+
+                link.href = url;
+            }
+        );
+
+        const metaDescription =
+            document.querySelector('meta[name="description"]');
+
+        if (metaDescription && config.metaDescription) {
+            metaDescription.content = config.metaDescription;
+        }
+
+        const accessMinutes =
+            document.querySelector(".access-stats .access-time-chip strong");
+
+        if (accessMinutes && config.accessMinutes) {
+            accessMinutes.textContent = config.accessMinutes;
+        }
+
+        if (config.pageTitle) {
+            document.title = config.pageTitle;
+        }
+    }
+
+    applyConfiguration();
+
     /* =========================================================
        ELEMENTOS
     ========================================================= */
@@ -55,11 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
        FOTOS
     ========================================================= */
 
-    const photos = [
-        "minha-foto.jpg",
-        "foto-2.jpg",
-        "foto-3.jpg"
-    ];
+    const photos = Array.isArray(config.photos) && config.photos.length
+        ? config.photos
+        : ["minha-foto.jpg"];
 
 
     let currentPhoto = 0;

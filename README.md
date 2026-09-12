@@ -151,13 +151,17 @@ O tempo de 25 minutos é curto o suficiente para controlar o consumo de banda e 
 | Hospedagem | Preferencialmente no próprio roteador/captive portal |
 | Rede | Hotspot autenticado com captive portal |
 
+As fontes usam fallbacks do sistema para que a interface continue carregando quando o visitante ainda não tem acesso à internet externa. Isso evita depender de CDNs durante a autenticação do captive portal.
+
 ### Estrutura esperada
 
 ```text
 wifi-free/
+├── index.html           # Entrada da demonstração e página pública
 ├── wifi-free.html       # Landing page do captive portal
 ├── style.css            # Sistema visual, responsividade e animações
 ├── script.js            # Galeria, validação e interações
+├── config.js            # Nome, links, fotos e textos personalizáveis
 ├── minha-foto.jpg       # Foto principal de identificação
 ├── foto-2.jpg           # Foto complementar
 ├── foto-3.jpg           # Foto complementar
@@ -168,11 +172,35 @@ wifi-free/
 
 ## 🎛️ Como personalizar o projeto
 
-O projeto é estático e não exige build. Para criar uma versão para outro anfitrião, evento ou marca, edite os arquivos diretamente e copie os arquivos atualizados para o captive portal.
+O projeto é estático e não exige build. Para criar uma versão para outro anfitrião, evento ou marca, comece por `config.js` e copie os arquivos atualizados para o captive portal.
+
+`index.html` e `wifi-free.html` são mantidos com o mesmo conteúdo para atender tanto à demonstração do GitHub Pages quanto a firmwares que exigem um nome específico para a página do portal. Depois de alterar `wifi-free.html`, replique a alteração em `index.html` antes de publicar.
 
 ### 1. Troque nome, apelido e textos
 
-Abra `wifi-free.html` e procure pelos textos visíveis na página:
+Para a maioria das personalizações, edite somente estes campos em `config.js`:
+
+```javascript
+window.DrinkForNetConfig = {
+    hostName: "Nome do anfitrião",
+    nickname: "@usuario",
+    accessMinutes: 25,
+    socialLinks: {
+        instagram: "https://instagram.com/usuario",
+        x: "https://x.com/usuario",
+        spotify: "https://open.spotify.com/"
+    },
+    photos: [
+        "minha-foto.jpg",
+        "foto-2.jpg",
+        "foto-3.jpg"
+    ]
+};
+```
+
+O objeto completo também contém os textos do hero, regra da troca, instruções de localização, legenda da galeria e título da página. A edição centralizada evita procurar os mesmos dados em vários arquivos.
+
+Se precisar de uma alteração estrutural ou de um texto que não exista no `config.js`, abra `wifi-free.html` e procure pelos seletores correspondentes:
 
 ```html
 <div class="profile-name">
