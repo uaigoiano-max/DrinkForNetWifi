@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <meta
+        name="description"
+        content="Página para encontrar Thiago, liberar Wi-Fi VIP e ver fotos e redes sociais."
+    >
+
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <title>Wi-Fi VIP — Thiago</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <main class="page">
+
+        <section class="card">
+
+
+            <!-- =================================================
+                 TOP BAR
+            ================================================== -->
+
+            <header class="topbar">
+
+                <div class="brand">
+
+                    <svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true">
+                        <circle cx="10" cy="10" r="10"></circle>
+                        <path d="M8 6.5 L14 10 L8 13.5 Z"></path>
+                    </svg>
+
+                    <span>PAGA E LIBERO</span>
+
+                </div>
+
+
+                <div class="network-status">
+
+                    <span class="status-dot"></span>
+
+                    REDE ATIVA
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="hero">
+
+
+                <!-- PROFILE -->
+
+                <div class="profile">
+
+                    <div class="profile-photo-wrap">
+
+                        <div class="profile-avatar">
+
+                            <div class="avatar-blob" aria-hidden="true"></div>
+
+                            <svg class="spin-badge" viewBox="0 0 140 140" aria-hidden="true">
+                                <defs>
+                                    <path id="spinBadgePath" d="M 70,70 m -58,0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0"></path>
+                                </defs>
+                                <text>
+                                    <textPath href="#spinBadgePath" startOffset="0%">
+                                        TOQUE PARA VER MAIS • TOQUE PARA VER MAIS •
+                                    </textPath>
+                                </text>
+                            </svg>
+
+                            <div class="live-badge">
+                                <span class="live-dot"></span>
+                                ATIVO AGORA
+                            </div>
+
+                            <button
+                                type="button"
+                                class="profile-button"
+                                id="openGallery"
+                                aria-label="Abrir fotos de Thiago"
+                            >
+
+                                <img
+                                    src="minha-foto.jpg"
+                                    alt="Thiago"
+                                    class="profile-photo"
+                                    width="128"
+                                    height="128"
+                                    fetchpriority="high"
+                                    decoding="async"
+                                >
+
+                                <span class="photo-hint">+</span>
+
+                            </button>
+
+                            <span class="photo-badge" id="photoCounter">1/3</span>
+
+                        </div>
+
+                        <div class="photo-dots" id="photoDots"></div>
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <div class="profile-eyebrow">
+                            VOCÊ ESTÁ PROCURANDO
+                        </div>
+
+                        <div class="profile-name">
+                            Thiago
+                        </div>
+
+                        <div class="profile-nickname">
+                            @UaiGoiano
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HERO LABEL -->
+
+                <div class="hero-label">
+                    UMA TROCA SIMPLES
+                </div>
+
+
+
+                <!-- HERO TITLE -->
+
+                <h1>
+
+                    Quer internet?
+
+                    <span>Me encontre.</span>
+
+                </h1>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="hero-description">
+
+                    Me encontre, pague uma bebida
+                    e eu libero seu acesso ao Wi-Fi VIP
+                    na hora.
+
+                </p>
+
+                <!-- WAVEFORM -->
+
+                <svg class="waveform" viewBox="0 0 240 32" preserveAspectRatio="none" aria-hidden="true">
+                    <rect x="0" y="12" width="3" height="8" rx="1.5"></rect>
+                    <rect x="7" y="6" width="3" height="20" rx="1.5"></rect>
+                    <rect x="14" y="2" width="3" height="28" rx="1.5"></rect>
+                    <rect x="21" y="9" width="3" height="14" rx="1.5"></rect>
+                    <rect x="28" y="4" width="3" height="24" rx="1.5"></rect>
+                    <rect x="35" y="11" width="3" height="10" rx="1.5"></rect>
+                    <rect x="42" y="0" width="3" height="32" rx="1.5"></rect>
+                    <rect x="49" y="8" width="3" height="16" rx="1.5"></rect>
+                    <rect x="56" y="13" width="3" height="6" rx="1.5"></rect>
+                    <rect x="63" y="5" width="3" height="22" rx="1.5"></rect>
+                    <rect x="70" y="10" width="3" height="12" rx="1.5"></rect>
+                    <rect x="77" y="1" width="3" height="30" rx="1.5"></rect>
+                    <rect x="84" y="7" width="3" height="18" rx="1.5"></rect>
+                    <rect x="91" y="12" width="3" height="8" rx="1.5"></rect>
+                    <rect x="98" y="3" width="3" height="26" rx="1.5"></rect>
+                    <rect x="105" y="9" width="3" height="14" rx="1.5"></rect>
+                    <rect x="112" y="14" width="3" height="4" rx="1.5"></rect>
+                    <rect x="119" y="6" width="3" height="20" rx="1.5"></rect>
+                    <rect x="126" y="0" width="3" height="32" rx="1.5"></rect>
+                    <rect x="133" y="10" width="3" height="12" rx="1.5"></rect>
+                    <rect x="140" y="4" width="3" height="24" rx="1.5"></rect>
+                    <rect x="147" y="12" width="3" height="8" rx="1.5"></rect>
+                    <rect x="154" y="7" width="3" height="18" rx="1.5"></rect>
+                    <rect x="161" y="2" width="3" height="28" rx="1.5"></rect>
+                    <rect x="168" y="11" width="3" height="10" rx="1.5"></rect>
+                    <rect x="175" y="5" width="3" height="22" rx="1.5"></rect>
+                    <rect x="182" y="13" width="3" height="6" rx="1.5"></rect>
+                    <rect x="189" y="8" width="3" height="16" rx="1.5"></rect>
+                    <rect x="196" y="1" width="3" height="30" rx="1.5"></rect>
+                    <rect x="203" y="9" width="3" height="14" rx="1.5"></rect>
+                    <rect x="210" y="14" width="3" height="4" rx="1.5"></rect>
+                    <rect x="217" y="6" width="3" height="20" rx="1.5"></rect>
+                    <rect x="224" y="10" width="3" height="12" rx="1.5"></rect>
+                    <rect x="231" y="3" width="3" height="26" rx="1.5"></rect>
+                </svg>
+
+
+
+                <!-- SOCIAL -->
+
+                <div class="social-area">
+
+                    <div class="social-title">
+                        REDES SOCIAIS
+                    </div>
+
+                    <div class="social-links">
+
+                        <!-- INSTAGRAM -->
+
+                        <a
+                            href="https://instagram.com/uaigoiano"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Siga-me no Instagram"
+                        >
+
+                            <svg class="social-icon instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                            </svg>
+
+                        </a>
+
+                        <!-- X / TWITTER -->
+
+                        <a
+                            href="https://x.com/uaigoiano"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Siga-me no X"
+                        >
+
+                            <svg class="social-icon x-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.627l-5.1-6.694-5.867 6.694h-3.306l7.73-8.835L2.882 2.25h6.791l4.789 6.335 5.082-6.335zM17.169 18.75h1.829L6.736 3.944H4.771l12.398 14.806z"></path>
+                            </svg>
+
+                        </a>
+
+                        <!-- SPOTIFY -->
+
+                        <a
+                            href="https://open.spotify.com/user/mfdokoziencx1cd55rnlstufv?si=697fcc00c507499a"
+                            class="social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Siga-me no Spotify"
+                        >
+
+                            <svg class="social-icon spotify-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M7.2 10.2c3-1 6.8-.9 9.1.4"></path>
+                                <path d="M7.7 13.1c2.5-.8 5.6-.7 7.5.5"></path>
+                                <path d="M8.3 15.9c1.9-.6 4.1-.5 5.7.4"></path>
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACCESS CONTENT
+            ================================================== -->
+
+            <section class="content">
+
+
+                <!-- =================================================
+                     ACCESS PROMISE
+                ================================================== -->
+
+                <div class="section-block">
+
+                    <div class="section-heading centered">
+                        <span>01</span>
+                        A REGRA É SIMPLES
+                    </div>
+
+                    <div class="access-promise">
+
+                        <div class="access-copy-values">
+
+                            <strong>
+                                Você me paga uma bebida.
+                            </strong>
+
+                            <strong class="accent-text">
+                                Eu libero 25 min de Wi-Fi.
+                            </strong>
+
+                        </div>
+
+                        <p>
+                            Simples assim: cada bebida que você
+                            me pagar, eu libero 25 minutos de
+                            acesso à rede VIP na hora.
+                        </p>
+
+                        <div class="access-stats">
+
+                            <div class="access-time-chip">
+
+                                <strong>
+                                    25
+                                </strong>
+
+                                <span>
+                                    MIN
+                                </span>
+
+                            </div>
+
+                            <div class="access-stats-divider"></div>
+
+                            <div class="access-time-chip">
+
+                                <strong>
+                                    2
+                                </strong>
+
+                                <span>
+                                    LOCAIS
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOCATION
+                ================================================== -->
+
+                <div class="section-block">
+
+                    <div class="section-heading centered">
+                        <span>02</span>
+                        ONDE ME ENCONTRAR
+                    </div>
+
+                    <div class="locations">
+
+                        <div class="location">
+
+                            <div class="location-icon">
+                                🎉
+                            </div>
+
+                            <div class="location-content">
+
+                                <div class="location-title">
+                                    NA PISTA
+                                </div>
+
+                                <div class="location-description">
+                                    Procure por mim na pista. Ainda não me conhece? Veja as fotos ou siga meu <a href="https://instagram.com/uaigoiano" target="_blank" rel="noopener noreferrer" class="location-link">Instagram</a> para me reconhecer. 😉
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="location">
+
+                            <div class="location-icon">
+                                🎭
+                            </div>
+
+                            <div class="location-content">
+
+                                <div class="location-title">
+                                    ATRÁS DO PALCO
+                                </div>
+
+                                <div class="location-description">
+                                    Pergunte por Thiago ou @UaiGoiano à equipe do evento — segurança, produção ou staff. Seja educado(a) e eles vão ajudar você. 🙏
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     VOUCHER
+                ================================================== -->
+
+                <div class="voucher-section">
+
+
+                    <div class="voucher-top">
+
+                        <div>
+
+                            <div class="section-heading">
+
+                                <span>03</span>
+
+                                ACESSAR REDE
+
+                            </div>
+
+                            <div class="voucher-title">
+                                Digite seu código de acesso.
+                            </div>
+
+                        </div>
+
+
+                        <span class="voucher-tag">
+                            É JUSTO
+                        </span>
+
+                    </div>
+
+
+
+                    <form
+                        method="POST"
+                        action="$authaction"
+                        id="voucherForm"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="tok"
+                            value="$tok"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="redir"
+                            value="$redir"
+                        >
+
+                        <label
+                            class="sr-only"
+                            for="voucher"
+                        >
+                            Código de acesso
+                        </label>
+
+                        <input
+                            type="text"
+                            name="voucher"
+                            id="voucher"
+                            placeholder="CÓDIGO DE ACESSO"
+                            required
+                            autocomplete="off"
+                            autocapitalize="characters"
+                            spellcheck="false"
+                            inputmode="text"
+                            aria-describedby="voucherHelp"
+                            aria-invalid="false"
+                        >
+
+                        <p
+                            id="voucherHelp"
+                            class="form-help"
+                            aria-live="polite"
+                        >
+                            Digite o código para liberar o Wi‑Fi.
+                        </p>
+
+                        <button
+                            type="submit"
+                            id="submitButton"
+                        >
+
+                            <span>
+                                LIBERAR WI-FI
+                            </span>
+
+                            <span class="button-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="footer">
+
+                <span>
+                    PAGA E LIBERO
+                </span>
+
+                <span>
+                    01 BEBIDA · 25 MIN
+                </span>
+
+                <span>
+                    THIAGO · UAIGOIANO
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <div
+        class="gallery"
+        id="gallery"
+        aria-hidden="true"
+        aria-modal="true"
+        role="dialog"
+        aria-labelledby="galleryCaption"
+    >
+
+        <div
+            class="gallery-backdrop"
+            id="galleryBackdrop"
+        ></div>
+
+
+        <div class="gallery-content">
+
+            <div class="gallery-glow" aria-hidden="true"></div>
+
+            <button
+                type="button"
+                class="gallery-close"
+                id="closeGallery"
+                aria-label="Fechar galeria"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M6 6 L18 18 M18 6 L6 18"></path>
+                </svg>
+            </button>
+
+
+            <div
+                class="gallery-counter"
+                id="galleryCounter"
+            >
+                01 / 03
+            </div>
+
+
+            <img
+                src="minha-foto.jpg"
+                alt="Thiago"
+                class="gallery-image"
+                id="galleryImage"
+                width="480"
+                height="640"
+                loading="lazy"
+                decoding="async"
+            >
+
+
+            <button
+                type="button"
+                class="gallery-prev"
+                id="galleryPrev"
+                aria-label="Foto anterior"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 6 L9 12 L15 18"></path>
+                </svg>
+            </button>
+
+
+            <button
+                type="button"
+                class="gallery-next"
+                id="galleryNext"
+                aria-label="Próxima foto"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 6 L15 12 L9 18"></path>
+                </svg>
+            </button>
+
+
+            <div
+                class="gallery-dots"
+                id="galleryDots"
+            ></div>
+
+
+            <div class="gallery-caption" id="galleryCaption">
+                É esse cara que você está procurando.
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

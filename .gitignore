@@ -1,0 +1,24 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+
+# Local preview artifacts
+*.log
+node_modules/
+dist/
+build/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Temporary browser preview profiles
+.preview-profile/
+.preview-profile2/
