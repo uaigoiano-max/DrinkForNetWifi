@@ -15,17 +15,19 @@ Use o link acima para visualizar a experiência do visitante em um celular, tabl
 ## Wi-Fi VIP para quem sabe onde encontrar a conexão
 
 > **Você está procurando internet?**  
-> Então encontre a pessoa certa, faça a troca certa e desbloqueie seu próximo intervalo de conexão.
+> Então encontre quem está disponibilizando a rede, participe da dinâmica e desbloqueie seu próximo intervalo de conexão.
 
-O **DrinkForNet** é uma experiência de acesso Wi-Fi criada para festivais, festas e eventos presenciais. Em vez de entregar uma senha global em um cartaz ou QR Code compartilhado, o projeto transforma o acesso à internet em uma jornada curta, memorável e controlada:
+O **DrinkForNet** é uma experiência de acesso Wi-Fi criada para uma pessoa levar a festas, festivais e outros eventos presenciais. A rede não precisa ser oficial nem fornecida pela organização: ela é disponibilizada por alguém que está no local e quer criar uma interação com outras pessoas. Em vez de entregar uma senha global em um cartaz ou QR Code compartilhado, o projeto transforma o acesso à internet em uma jornada curta, memorável e controlada:
 
-1. A pessoa entra na rede Wi-Fi do evento.
+1. A pessoa entra na rede Wi-Fi disponibilizada no evento.
 2. O captive portal abre esta landing page premium.
-3. A página explica a regra: **uma bebida vale 25 minutos de Wi-Fi VIP**.
-4. O visitante encontra Thiago na pista ou no backstage.
+3. A página explica a regra definida por quem está oferecendo a rede — por exemplo, **uma bebida vale 25 minutos de Wi-Fi VIP**.
+4. O visitante encontra essa pessoa na pista, no backstage ou no ponto combinado.
 5. Após a interação, recebe um voucher individual.
 6. O voucher é validado pelo roteador e libera o acesso temporário.
 7. Quando os 25 minutos terminam, o acesso expira e a experiência pode começar novamente.
+
+Essa dinâmica pode ser usada para conhecer pessoas, ganhar seguidores, criar conteúdo, divulgar um perfil, receber uma bebida ou simplesmente tornar a conexão mais divertida. A contrapartida é definida pelo anfitrião e deve ser sempre clara, voluntária e respeitosa.
 
 O projeto combina **design de produto, infraestrutura portátil, captive portal e uma mecânica social presencial** — uma pequena interface na borda da rede com uma grande capacidade de gerar interação no mundo real.
 
@@ -33,7 +35,7 @@ O projeto combina **design de produto, infraestrutura portátil, captive portal 
 
 ## 👀 Veja a experiência antes de instalar
 
-A landing page foi desenhada para funcionar como uma interface de evento: uma pessoa conecta ao Wi-Fi, reconhece o anfitrião, entende a troca em poucos segundos e chega ao campo de voucher sem precisar navegar por menus complexos.
+A landing page foi desenhada para funcionar como uma interface de evento: uma pessoa conecta ao Wi-Fi, reconhece quem está disponibilizando a rede, entende a dinâmica em poucos segundos e chega ao campo de voucher sem precisar navegar por menus complexos.
 
 ### Visão desktop
 
@@ -58,8 +60,8 @@ Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). A
 │ PAGA E LIBERO          REDE ATIVA   │
 │                                     │
 │          [foto do anfitrião]        │
-│             Thiago                  │
-│           @UaiGoiano                │
+│          [nome da pessoa]           │
+│          [@perfil social]           │
 │                                     │
 │       QUER INTERNET?                │
 │         ME ENCONTRE.                │
@@ -69,8 +71,8 @@ Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). A
 │ 01  A REGRA É SIMPLES              │
 │     1 bebida = 25 min de Wi-Fi     │
 │                                     │
-│ 02  ONDE ME ENCONTRAR              │
-│     Na pista · Atrás do palco      │
+│ 02  ONDE ENCONTRAR                 │
+│     Ponto combinado                 │
 │                                     │
 │ 03  ACESSAR REDE                  │
 │     [ CÓDIGO DE ACESSO ]           │
@@ -84,8 +86,8 @@ Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). A
 
 - Landing page responsiva com estética premium inspirada em produtos como Stripe e Linear.
 - Fluxo de voucher temporário integrado ao formulário de autenticação do captive portal.
-- Galeria de fotos para facilitar o reconhecimento de Thiago no evento.
-- Instruções objetivas de localização: **na pista** e **atrás do palco**.
+- Galeria de fotos para facilitar o reconhecimento de quem disponibiliza a rede.
+- Instruções objetivas de localização, como **na pista**, **atrás do palco** ou outro ponto combinado.
 - Links sociais para identificação e contato.
 - Compatibilidade conceitual com operações baseadas em Starlink, 4G/5G, roteadores de viagem e firmware com suporte a hotspot autenticado.
 - Interface preparada para uso rápido em telas pequenas, em ambientes com pouca luz e alta circulação.
@@ -107,7 +109,7 @@ Visitante conecta na rede
 Captive Portal abre a landing page
           │
           ▼
-Visitante encontra Thiago e faz a troca
+Visitante encontra quem disponibiliza a rede
           │
           ▼
 Recebe um voucher individual
@@ -505,7 +507,7 @@ Starlink
       Hotspot / Captive Portal
            │
            ▼
-      Rede Wi-Fi do evento
+      Rede Wi-Fi disponibilizada no evento
 ```
 
 **Configurações possíveis:**
