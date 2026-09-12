@@ -16,17 +16,17 @@ window.DrinkForNetConfig = {
     heroQuestion: "Quer internet?",
     heroAnswer: "Me encontre.",
     heroDescription:
-        "Me encontre, pague uma bebida e eu libero seu acesso ao Wi-Fi VIP na hora.",
+        "Encontre quem está disponibilizando a rede, participe da dinâmica e receba seu acesso ao Wi-Fi VIP na hora.",
     drinkRule: "Você me paga uma bebida.",
     drinkRuleAccent: "Eu libero 25 min de Wi-Fi.",
     ruleDescription:
         "Simples assim: cada bebida que você me pagar, eu libero 25 minutos de acesso à rede VIP na hora.",
     accessMinutes: 25,
     locationOnFloor:
-        "Procure por mim na pista. Ainda não me conhece? Veja as fotos ou siga meu Instagram para me reconhecer. 😉",
+        "Procure por mim no ponto combinado. Ainda não me conhece? Veja as fotos ou siga meu perfil para me reconhecer. 😉",
     locationBackstage:
         "Pergunte por Thiago ou @UaiGoiano à equipe do evento — segurança, produção ou staff. Seja educado(a) e eles vão ajudar você. 🙏",
-    galleryCaption: "É esse cara que você está procurando.",
+    galleryCaption: "É essa pessoa que você está procurando.",
     footerOffer: "01 BEBIDA · 25 MIN",
     socialLinks: {
         instagram: "https://instagram.com/uaigoiano",

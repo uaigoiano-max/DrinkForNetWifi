@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         galleryImage.alt =
-            "Thiago — foto " +
+            (config.hostName || "Pessoa anfitriã") + " — foto " +
             (currentPhoto + 1);
 
 
