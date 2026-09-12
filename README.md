@@ -165,6 +165,7 @@ wifi-free/
 ├── minha-foto.jpg       # Foto principal de identificação
 ├── foto-2.jpg           # Foto complementar
 ├── foto-3.jpg           # Foto complementar
+├── docs/hardware/       # Imagens de equipamentos indicados
 └── README.md            # Documentação da operação
 ```
 
@@ -385,6 +386,32 @@ O servidor local valida a interface, mas não simula a autenticação real. O te
 O projeto foi pensado para ser transportável. A internet de origem pode mudar; a experiência do visitante permanece a mesma.
 
 > “Recomendado” não significa que qualquer modelo tenha todas as funções prontas. Antes da compra, confirme: captive portal personalizado, vouchers com expiração, armazenamento de arquivos, modo de autenticação e suporte ao número de clientes esperado.
+
+### Produto indicado: Cudy TR1200
+
+O **Cudy TR1200** é uma opção compacta para prototipagem e eventos pequenos. O modelo oferece Wi-Fi 5 AC1200, modos de operação para viagem, uma porta WAN, uma porta LAN, alimentação USB-C e suporte a OpenWrt conforme a versão/configuração anunciada pelo fabricante.
+
+<p align="center">
+  <a href="https://link.amazon/B09nTMBi1" target="_blank" rel="nofollow sponsored noopener">
+    <img src="docs/hardware/cudy-tr1200.png" alt="Roteador de viagem Cudy TR1200 na cor laranja" width="520">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://link.amazon/B09nTMBi1" target="_blank" rel="nofollow sponsored noopener"><strong>Ver o Cudy TR1200 na Amazon</strong></a>
+</p>
+
+> **Aviso de transparência:** este é um link de afiliado da Amazon. Se você comprar por ele, posso receber uma comissão sem custo adicional para você. Preços, estoque, impostos e condições podem mudar; confirme as informações na página da Amazon antes da compra.
+
+**Por que ele faz sentido para este projeto:**
+
+- formato pequeno para transporte entre eventos;
+- alimentação compatível com powerbank USB-C;
+- modos de viagem úteis para receber internet por Wi-Fi ou Ethernet;
+- hardware adequado para testes de portal local e rede de convidados;
+- possibilidade de expansão com firmware compatível, quando necessário.
+
+**Antes de comprar:** o roteador, sozinho, não garante vouchers nem captive portal. Confirme a versão do firmware e valide a instalação do openNDS, Nodogsplash ou outra solução equivalente. Para muitos clientes, cobertura ampla ou operação crítica, use um equipamento mais robusto e faça um teste de carga antes do evento.
 
 ### Matriz mínima de compatibilidade
 
