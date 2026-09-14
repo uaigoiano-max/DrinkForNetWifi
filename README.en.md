@@ -14,6 +14,8 @@
 
 The demo shows the visitor experience on desktop and mobile. Voucher creation, authentication and session expiration still depend on the captive portal configured on the router.
 
+> **Archived version:** the personalized demonstration used before this repository became a reusable template is preserved in the [`v1.0-personal-template`](https://github.com/uaigoiano-max/DrinkForNetWifi/releases/tag/v1.0-personal-template) release. Use it for reference only; new projects should start from the current version.
+
 ## What is DrinkForNet?
 
 DrinkForNet is a reusable Wi-Fi landing page for a person who wants to bring a portable network to a party, festival or live event. The network does not need to be official or provided by the event organizers: it is made available by someone at the venue who wants to create a fun interaction with other people.
@@ -169,7 +171,7 @@ Contributions are welcome through Pull Requests. Please read:
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [SECURITY.md](SECURITY.md)
 
-The `main` branch requires a Pull Request, a review and a successful validation workflow.
+The `main` branch requires a Pull Request and a successful validation workflow. External contributions require review before merging; repository administrators may merge their own reviewed Pull Requests.
 
 ## 📄 License
 

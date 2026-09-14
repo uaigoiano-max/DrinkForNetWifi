@@ -5,34 +5,33 @@
  * authentication and session expiry configured in the captive portal.
  */
 window.DrinkForNetConfig = {
-    pageTitle: "Wi-Fi VIP — Thiago",
+    pageTitle: "Wi-Fi VIP — Pessoa anfitriã",
     metaDescription:
-        "Página para encontrar Thiago, liberar Wi-Fi VIP e ver fotos e redes sociais.",
+        "Página para encontrar quem disponibiliza a rede, liberar Wi-Fi VIP e ver fotos e redes sociais.",
     brandName: "PAGA E LIBERO",
     networkLabel: "REDE ATIVA",
-    hostName: "Thiago",
-    nickname: "@UaiGoiano",
+    hostName: "Nome do anfitrião",
+    nickname: "@seuperfil",
     heroLabel: "UMA TROCA SIMPLES",
     heroQuestion: "Quer internet?",
-    heroAnswer: "Me encontre.",
+    heroAnswer: "Encontre-me.",
     heroDescription:
         "Encontre quem está disponibilizando a rede, participe da dinâmica e receba seu acesso ao Wi-Fi VIP na hora.",
-    drinkRule: "Você me paga uma bebida.",
+    drinkRule: "Você participa da dinâmica.",
     drinkRuleAccent: "Eu libero 25 min de Wi-Fi.",
     ruleDescription:
-        "Simples assim: cada bebida que você me pagar, eu libero 25 minutos de acesso à rede VIP na hora.",
+        "Defina uma troca clara e voluntária para liberar 25 minutos de acesso à rede VIP.",
     accessMinutes: 25,
     locationOnFloor:
-        "Procure por mim no ponto combinado. Ainda não me conhece? Veja as fotos ou siga meu perfil para me reconhecer. 😉",
+        "Procure a pessoa anfitriã no ponto combinado. Veja as fotos ou siga o perfil indicado para reconhecê-la. 😉",
     locationBackstage:
-        "Pergunte por Thiago ou @UaiGoiano à equipe do evento — segurança, produção ou staff. Seja educado(a) e eles vão ajudar você. 🙏",
+        "Pergunte pela pessoa anfitriã à equipe do local — segurança, produção ou staff. Seja educado(a) e eles vão ajudar você. 🙏",
     galleryCaption: "É essa pessoa que você está procurando.",
     footerOffer: "01 BEBIDA · 25 MIN",
     socialLinks: {
-        instagram: "https://instagram.com/uaigoiano",
-        x: "https://x.com/uaigoiano",
-        spotify:
-            "https://open.spotify.com/user/mfdokoziencx1cd55rnlstufv?si=697fcc00c507499a"
+        instagram: "",
+        x: "",
+        spotify: ""
     },
     photos: [
         "minha-foto.jpg",

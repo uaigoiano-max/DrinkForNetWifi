@@ -14,12 +14,25 @@
 
 Use o link acima para visualizar a experiência do visitante em um celular, tablet ou computador. Esta é uma demonstração visual; a emissão e a validação de vouchers continuam dependendo do captive portal configurado no roteador.
 
+### 🧭 Navegação rápida
+
+- [A ideia e a dinâmica social](#wi-fi-vip-para-quem-sabe-onde-encontrar-a-conexão)
+- [Veja a experiência antes de instalar](#-veja-a-experiência-antes-de-instalar)
+- [Como personalizar](#-como-personalizar-o-projeto)
+- [Quickstart](QUICKSTART.md)
+- [Hardware recomendado](docs/RECOMMENDED_HARDWARE.md)
+- [Testes e troubleshooting](#-checklist-de-teste-antes-do-evento)
+- [Segurança e privacidade](#-segurança-privacidade-e-responsabilidade-operacional)
+- [Documentação em inglês](README.en.md)
+
 ## Wi-Fi VIP para quem sabe onde encontrar a conexão
 
 > **Você está procurando internet?**  
 > Então encontre quem está disponibilizando a rede, participe da dinâmica e desbloqueie seu próximo intervalo de conexão.
 
 O **DrinkForNet** é uma experiência de acesso Wi-Fi criada para uma pessoa levar a festas, festivais e outros eventos presenciais. A rede não precisa ser oficial nem fornecida pela organização: ela é disponibilizada por alguém que está no local e quer criar uma interação com outras pessoas. Em vez de entregar uma senha global em um cartaz ou QR Code compartilhado, o projeto transforma o acesso à internet em uma jornada curta, memorável e controlada:
+
+> **Versão arquivada:** a demonstração personalizada usada antes da transformação deste repositório em template reutilizável está preservada na tag [`v1.0-personal-template`](https://github.com/uaigoiano-max/DrinkForNetWifi/releases/tag/v1.0-personal-template). Use essa versão apenas para referência; novos projetos devem começar pela versão atual.
 
 1. A pessoa entra na rede Wi-Fi disponibilizada no evento.
 2. O captive portal abre esta landing page premium.
@@ -216,11 +229,11 @@ Se precisar de uma alteração estrutural ou de um texto que não exista no `con
 
 ```html
 <div class="profile-name">
-    Thiago
+    Nome do anfitrião
 </div>
 
 <div class="profile-nickname">
-    @UaiGoiano
+    @seuperfil
 </div>
 ```
 
@@ -234,7 +247,7 @@ Altere também:
 - a legenda da galeria;
 - os textos do rodapé.
 
-Faça uma busca global por `Thiago`, `UaiGoiano`, `25` e `bebida` para localizar todas as referências antes de publicar.
+Faça uma busca global pelo nome, perfil, duração e contrapartida anteriores para localizar referências que ainda precisem ser personalizadas antes de publicar.
 
 ### 2. Atualize as redes sociais
 
