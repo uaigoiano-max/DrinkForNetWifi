@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const config = window.DrinkForNetConfig || {};
+    const fixedAccessMinutes = 25;
     const photos = Array.isArray(config.photos) && config.photos.length
         ? config.photos
         : ["minha-foto.jpg"];
@@ -18,17 +19,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setText(".profile-name", config.hostName);
     setText(".profile-nickname", config.nickname);
+    setText(".brand-name", config.brandName);
+    setText(".network-label", config.networkLabel);
+    setText(".hero-label", config.heroLabel);
     setText(".hero-description", config.heroDescription);
     setText(".location-on-floor", config.locationOnFloor);
     setText(".location-backstage", config.locationBackstage);
     setText(".footer-offer", config.footerOffer);
+    setText(".rule-description", config.ruleDescription);
+    setText(".gallery-caption", config.galleryCaption);
     document.title = config.pageTitle || document.title;
 
     $$(".drink-rule").forEach((element) => {
         element.textContent = config.drinkRule || "01 bebida";
     });
     $$(".access-minutes").forEach((element) => {
-        element.textContent = config.accessMinutes || 25;
+        element.textContent = fixedAccessMinutes;
     });
     const description = $("meta[name='description']");
     if (description && config.metaDescription) description.content = config.metaDescription;

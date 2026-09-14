@@ -8,11 +8,21 @@
 
 > **An open-source portable captive-portal experience for turning connectivity into a real-world social interaction.**
 
+> **Current version — prepared MVP (release candidate):** includes a
+> dependency-conscious Lua + shell OpenWrt core, persistent local vouchers and
+> a mobile admin panel. Sessions are exactly **1500 seconds (25 minutes)**.
+> Physical validation is still pending on the exact Cudy TR1200 revision and
+> event firmware; this is not production-certified. Read
+> [architecture](docs/ARCHITECTURE.md), [deployment](docs/DEPLOYMENT.md), and
+> [release notes](docs/RELEASE-NOTES.md).
+
 ## 🌐 Try the demo
 
 **[▶️ Open the landing page](https://uaigoiano-max.github.io/DrinkForNetWifi/)**
 
-The demo shows the visitor experience on desktop and mobile. Voucher creation, authentication and session expiration still depend on the captive portal configured on the router.
+The demo shows the visitor experience on desktop and mobile. The static page
+is separate from the local OpenWrt core, which generates, persists, activates,
+expires, and revokes vouchers without a computer during the event.
 
 > **Archived version:** the personalized demonstration used before this repository became a reusable template is preserved in the [`v1.0-personal-template`](https://github.com/uaigoiano-max/DrinkForNetWifi/releases/tag/v1.0-personal-template) release. Use it for reference only; new projects should start from the current version.
 
@@ -71,10 +81,10 @@ The visitor connects to the temporary Wi-Fi, sees the landing page, finds the pe
 - Responsive static landing page with no framework.
 - Captive-portal form with firmware placeholders.
 - Individual temporary voucher flow.
-- Configurable host name, social links, texts, access duration and photos.
+- Configurable host name, social links, texts and photos (the access duration is fixed at 25 minutes).
 - Local-first operation for networks without external internet access.
 - Accessible gallery with keyboard and reduced-motion support.
-- Hardware guidance for travel routers, powerbanks and cables.
+- Hardware guidance for travel routers, power banks and cables.
 - Automatic validation for critical files and captive-portal placeholders.
 
 ## 📸 Preview
@@ -152,11 +162,11 @@ $redir
 
 Do not remove or rename them without checking the captive-portal firmware documentation.
 
-The main selectors used by `script.js` are `.profile-name`, `.profile-nickname`, `.hero-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.drink-rule` and `.access-minutes`. The gallery uses `#gallery`, `#galleryImage`, `#galleryPrev` and `#galleryNext`; the voucher form is `#voucherForm`. Usually you only need to edit `config.js`, not the HTML.
+The main selectors used by `script.js` are `.brand-name`, `.network-label`, `.profile-name`, `.profile-nickname`, `.hero-label`, `.hero-description`, `.rule-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.gallery-caption`, `.drink-rule` and `.access-minutes`. The gallery uses `#gallery`, `#galleryImage`, `#galleryPrev` and `#galleryNext`; the voucher form is `#voucherForm`. Usually you only need to edit `config.js`, not the HTML.
 
 ### Replace photos and adapt the visual system
 
-Replace `minha-foto.jpg`, `foto-2.jpg` and `foto-3.jpg` with images you are authorized to publish. If you use different filenames, update the `photos` array in `config.js`. Prefer compressed local images so the captive portal remains usable before external internet access is granted.
+Replace the images listed in `config.js` with photos you are authorized to publish. If you use different filenames, update the `photos` array there. Prefer compressed local images so the captive portal remains usable before external internet access is granted.
 
 The main colors are CSS variables at the top of `style.css`:
 
@@ -174,6 +184,12 @@ The primary mobile breakpoint is `700px`. After changing the layout, test a narr
 
 ## 🧱 Architecture
 
+The prepared MVP also includes `openwrt/` (Lua core, protected CGI, init/cron
+and an explicit failing network adapter), `admin/` (a management-only mobile
+panel), and the [deployment checklist](docs/DEPLOYMENT.md). Keep `admin/`
+outside the visitor portal. The exact Cudy TR1200 revision and firmware still
+require physical validation.
+
 | Layer | Technology |
 | --- | --- |
 | Structure | Static HTML |
@@ -183,7 +199,11 @@ The primary mobile breakpoint is `700px`. After changing the layout, test a narr
 | Hosting | Preferably local on the router or hotspot |
 | Network | Guest Wi-Fi with captive portal |
 
-The page does not create the Wi-Fi network, issue vouchers or expire sessions by itself. Those responsibilities belong to the router, hotspot firmware or authentication service.
+The visitor page does not create the Wi-Fi network or enforce firewall rules.
+The OpenWrt Lua core handles local voucher state; the network adapter remains an
+explicit failing stub until tested against the actual captive-portal stack.
+This repository makes no compatibility claim for OpenNDS, NoDogSplash, or Cudy
+stock firmware.
 
 ## 🛰️ Hardware
 

@@ -6,3 +6,6 @@
 @media(min-width:701px){.hero{grid-template-columns:minmax(0,1fr) minmax(360px,390px)}.portrait{width:100%;min-width:360px}}
 .portrait-button img{object-fit:contain;background:#202733}
 @media(min-width:701px){h1{font-size:clamp(4rem,6vw,8rem);max-width:620px}}
+.logo .brand-name{color:var(--cream)}
+.gallery-caption{margin:0 0 18px;color:#5f594f}
+.portrait-button img,.gallery-image{object-fit:contain;background:#202733}

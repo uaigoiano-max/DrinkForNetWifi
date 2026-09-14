@@ -1,0 +1,47 @@
+#!/bin/sh
+# Captive-portal/network adapter boundary.
+# It intentionally refuses to authorize until a tested firewall backend is added.
+set -eu
+
+CORE="${DRINKFORNET_CORE:-/usr/libexec/drinkfornet-core.lua}"
+fail() {
+    echo "drinkfornet-adapter: $*" >&2
+    exit 78
+}
+
+[ -x "$CORE" ] || [ -f "$CORE" ] || fail "voucher core is not installed"
+action="${1:-}"
+case "$action" in
+    reconcile)
+        exec lua "$CORE" reconcile
+        ;;
+    status)
+        exec lua "$CORE" status
+        ;;
+    generate)
+        exec lua "$CORE" generate "${2:-1}"
+        ;;
+    revoke)
+        [ -n "${2:-}" ] || fail "usage: revoke VOUCHER_OR_ID"
+        exec lua "$CORE" revoke "$2"
+        ;;
+    validate)
+        [ -n "${2:-}" ] || fail "usage: validate VOUCHER"
+        result="$(lua "$CORE" activate "$2" 2>&1)" || fail "voucher rejected: $result"
+        voucher_id="$(printf '%s\n' "$result" | awk -F '\t' 'NR == 1 { print $2 }')"
+        [ -n "$voucher_id" ] || fail "core returned no session id"
+        # A real implementation must map this id to the captive portal's client
+        # identity and firewall rules. Never silently grant access in this stub.
+        if ! "$0" authorize "$voucher_id"; then
+            lua "$CORE" revoke "$voucher_id" >/dev/null 2>&1 || true
+            fail "network backend is not configured; voucher was revoked"
+        fi
+        printf '%s\n' "$result"
+        ;;
+    authorize|deauthorize)
+        fail "network backend is not configured; no client was authorized"
+        ;;
+    *)
+        fail "unsupported action (reconcile, status, generate, revoke, validate)"
+        ;;
+esac

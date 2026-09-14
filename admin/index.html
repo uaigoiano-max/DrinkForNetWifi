@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DrinkForNet admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <main>
+        <header>
+            <p class="eyebrow">DRINKFORNET / LOCAL ADMIN</p>
+            <h1>Voucher control</h1>
+            <p class="notice">This panel is for the operator on the management network. It is not part of the visitor captive portal.</p>
+        </header>
+        <section class="auth card">
+            <label for="adminToken">Admin token</label>
+            <input id="adminToken" type="password" autocomplete="off" placeholder="Configured on the router">
+            <button id="saveToken" type="button">Save on this device</button>
+            <p id="authState" class="muted">The token is kept only in this browser session.</p>
+        </section>
+        <section class="card">
+            <div class="section-title"><h2>Status</h2><button id="refresh" type="button">Refresh</button></div>
+            <dl id="status"><dt>Loading…</dt></dl>
+        </section>
+        <section class="card">
+            <div class="section-title"><h2>Generate vouchers</h2></div>
+            <label for="count">Quantity (1–100)</label>
+            <input id="count" type="number" min="1" max="100" value="1">
+            <button id="generate" type="button">Generate</button>
+            <p id="generated" class="output" aria-live="polite"></p>
+            <p class="warning">Codes are shown once. Copy them to the operator's secure notes; only digests are persisted.</p>
+        </section>
+        <section class="card">
+            <div class="section-title"><h2>Vouchers and sessions</h2><button id="loadVouchers" type="button">Refresh list</button></div>
+            <div class="table-wrap"><table><thead><tr><th>ID</th><th>State</th><th>Expires (epoch)</th><th>Action</th></tr></thead><tbody id="vouchers"></tbody></table></div>
+        </section>
+        <p id="error" class="error" role="alert"></p>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>

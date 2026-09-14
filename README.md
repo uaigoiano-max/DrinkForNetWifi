@@ -8,13 +8,19 @@
 
 > **A portable captive-portal experience for turning connectivity into a real-world encounter.**
 
+> **Versão atual — MVP preparado (release candidate):** o projeto agora inclui
+> um núcleo Lua + shell para OpenWrt, vouchers locais persistentes e painel
+> administrativo móvel. Cada sessão dura exatamente **1500 segundos (25
+> minutos)**. A validação física ainda está pendente no lote/revisão exatos do
+> Cudy TR1200 e no firmware do evento; não é uma versão certificada para
+> produção. Veja [arquitetura](docs/ARCHITECTURE.md), [implantação](docs/DEPLOYMENT.md)
+> e [notas da versão](docs/RELEASE-NOTES.md).
+
 ## 🌐 Abra a demonstração
 
 > **[▶️ Abrir a landing page no navegador](https://uaigoiano-max.github.io/DrinkForNetWifi/)**
 
-Use o link acima para visualizar a experiência do visitante em um celular, tablet ou computador. Esta é uma demonstração visual; a emissão e a validação de vouchers continuam dependendo do captive portal configurado no roteador.
-
-> **Modelo B em revisão:** a nova interface responsiva está disponível na [Pull Request #2](https://github.com/uaigoiano-max/DrinkForNetWifi/pull/2). Depois do merge, o link acima passa a abrir automaticamente essa versão no GitHub Pages.
+Use o link acima para visualizar a experiência do visitante em um celular, tablet ou computador. A página continua sendo uma demonstração estática; o núcleo local e o adaptador de rede devem ser instalados separadamente no OpenWrt.
 
 ### 🧭 Navegação rápida
 
@@ -140,7 +146,7 @@ Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). A
 
 ## ✨ O que este projeto entrega
 
-- Landing page responsiva com estética premium inspirada em produtos como Stripe e Linear.
+- Landing page responsiva com identidade visual própria, sem framework.
 - Fluxo de voucher temporário integrado ao formulário de autenticação do captive portal.
 - Galeria de fotos para facilitar o reconhecimento de quem disponibiliza a rede.
 - Instruções objetivas de localização, como **na pista**, **atrás do palco** ou outro ponto combinado.
@@ -148,7 +154,7 @@ Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). A
 - Compatibilidade conceitual com operações baseadas em Starlink, 4G/5G, roteadores de viagem e firmware com suporte a hotspot autenticado.
 - Interface preparada para uso rápido em telas pequenas, em ambientes com pouca luz e alta circulação.
 
-> **Importante:** este repositório contém a experiência web. A emissão, validação, expiração e revogação dos vouchers acontecem no equipamento ou serviço de captive portal escolhido para a operação.
+> **Importante:** o núcleo local em `openwrt/` gera, persiste, ativa, expira e revoga vouchers sem computador durante o evento. A autorização efetiva no firewall/captive portal ainda é um adaptador explícito e não implementado até a validação física; nenhum suporte a OpenNDS, NoDogSplash ou firmware Cudy é alegado.
 
 ---
 
@@ -204,7 +210,7 @@ O tempo de 25 minutos é curto o suficiente para controlar o consumo de banda e 
 | Camada | Tecnologia |
 | --- | --- |
 | Estrutura | HTML sem framework |
-| Estilos | CSS responsivo e animações nativas |
+| Estilos | CSS responsivo e variáveis nativas |
 | Interações | JavaScript vanilla |
 | Imagens | Arquivos locais otimizáveis |
 | Autenticação | Formulário compatível com placeholders de captive portal |
@@ -219,7 +225,7 @@ As fontes usam fallbacks do sistema para que a interface continue carregando qua
 wifi-free/
 ├── index.html           # Entrada da demonstração e página pública
 ├── wifi-free.html       # Landing page do captive portal
-├── style.css            # Sistema visual, responsividade e animações
+├── style.css            # Sistema visual e responsividade
 ├── script.js            # Galeria, validação e interações
 ├── config.js            # Nome, links, fotos e textos personalizáveis
 ├── QUICKSTART.md        # Instalação rápida
@@ -227,10 +233,16 @@ wifi-free/
 │                         # Roteador, powerbank e cabos
 ├── scripts/validate-project.mjs
 │                         # Validação local dos arquivos críticos
+├── openwrt/              # Núcleo Lua, CGI, init/cron e adaptador seguro
+├── admin/                # Painel móvel separado do portal de visitantes
+├── docs/ARCHITECTURE.md  # Limites e fronteiras da integração
+├── docs/DEPLOYMENT.md    # Instalação e gate de validação física
 ├── minha-foto.jpg       # Foto principal de identificação
 ├── foto-2.jpg           # Foto complementar
 ├── foto-3.jpg           # Foto complementar
 ├── docs/hardware/       # Imagens de equipamentos indicados
+├── docs/screenshots/    # Pré-visualizações desktop e mobile
+├── .gitattributes       # Configuração das estatísticas de linguagens
 └── README.md            # Documentação da operação
 ```
 
@@ -240,7 +252,7 @@ wifi-free/
 
 O projeto é estático e não exige build. Para criar uma versão para outro anfitrião, evento ou marca, comece por `config.js` e copie os arquivos atualizados para o captive portal.
 
-`index.html` e `wifi-free.html` são mantidos com o mesmo conteúdo para atender tanto à demonstração do GitHub Pages quanto a firmwares que exigem um nome específico para a página do portal. Depois de alterar `wifi-free.html`, replique a alteração em `index.html` antes de publicar.
+`index.html` e `wifi-free.html` são mantidos com o mesmo conteúdo para atender tanto à demonstração do GitHub Pages quanto a firmwares que exigem um nome específico para a página do portal. Depois de qualquer alteração estrutural em um deles, replique a alteração no outro e confirme a igualdade com `node scripts/validate-project.mjs`.
 
 ### 1. Troque nome, apelido e textos
 
@@ -264,7 +276,7 @@ window.DrinkForNetConfig = {
 };
 ```
 
-O objeto completo também contém os textos do hero, regra da troca, instruções de localização, legenda da galeria, redes sociais e título da página. A edição centralizada evita procurar os mesmos dados em vários arquivos. O valor de `accessMinutes` deve ser igual ao tempo configurado no roteador.
+O objeto completo também contém os textos do hero, regra da troca, instruções de localização, legenda da galeria, redes sociais e título da página. A edição centralizada evita procurar os mesmos dados em vários arquivos. `accessMinutes` permanece em `25` para a interface; o núcleo impõe exatamente 1500 segundos e não deve ser alterado.
 
 Se precisar de uma alteração estrutural ou de um texto que não exista no `config.js`, abra `wifi-free.html` e procure pelos seletores correspondentes:
 
@@ -284,11 +296,11 @@ Altere também:
 - a galeria (`#gallery`, `#galleryImage`, `#galleryPrev` e `#galleryNext`);
 - os textos do rodapé (`.footer-offer`).
 
-Os campos que o `script.js` preenche automaticamente são: `.profile-name`, `.profile-nickname`, `.hero-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.drink-rule` e `.access-minutes`. Faça uma busca global pelo nome, perfil, duração e contrapartida anteriores para localizar referências que ainda precisem ser personalizadas antes de publicar.
+Os campos que o `script.js` preenche automaticamente são: `.brand-name`, `.network-label`, `.profile-name`, `.profile-nickname`, `.hero-label`, `.hero-description`, `.rule-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.gallery-caption`, `.drink-rule` e `.access-minutes`. Faça uma busca global pelo nome, perfil, duração e contrapartida anteriores para localizar referências que ainda precisem ser personalizadas antes de publicar.
 
 ### 2. Atualize as redes sociais
 
-Os links ficam em `wifi-free.html`, dentro de `.social-links` e também na seção de localização:
+Os links são configurados em `config.js`:
 
 ```html
 <a
@@ -300,13 +312,13 @@ Os links ficam em `wifi-free.html`, dentro de `.social-links` e também na seç�
 >
 ```
 
-Atualize:
+Para a personalização normal, atualize apenas:
 
 | Rede | Local a alterar |
 | --- | --- |
-| Instagram | Link do ícone social e link em `NA PISTA` |
-| X | Link do ícone social |
-| Spotify | Link do ícone social |
+| Instagram | `config.socialLinks.instagram` |
+| X | `config.socialLinks.x` |
+| Spotify | `config.socialLinks.spotify` |
 
 Deixe o campo vazio em `config.js` para ocultar o ícone correspondente. O `script.js` aplica os links aos elementos `.social-link`; não é necessário editar os SVGs inline. Não deixe `href="#"`, pois isso cria links sem destino.
 
@@ -315,7 +327,7 @@ Deixe o campo vazio em `config.js` para ocultar o ícone correspondente. O `scri
 Mantenha os nomes esperados ou altere os caminhos no array `photos` de `config.js`. A imagem principal e a galeria usam essa mesma configuração.
 
 ```javascript
-const photos = [
+photos: [
     "minha-foto.jpg",
     "foto-2.jpg",
     "foto-3.jpg"
@@ -333,16 +345,17 @@ Recomendações para fotos de evento:
 
 Para uma operação mais leve, exporte a foto principal em aproximadamente `800px` no maior lado e as fotos da galeria em aproximadamente `1200px`, ajustando conforme a qualidade visual necessária.
 
-### 4. Altere a oferta e a duração
+### 4. Altere a oferta (a duração é fixa)
 
-O valor aparece em mais de um trecho da interface. Se a duração deixar de ser 25 minutos, atualize:
+O valor de 25 minutos é fixo nesta versão. Não altere a duração no HTML, no
+`config.js` ou no núcleo:
 
 - a chamada principal;
 - o card de regras;
 - as estatísticas;
 - o rodapé;
 - o texto do README;
-- a duração configurada no captive portal.
+- a duração configurada no adaptador de rede (1500 segundos).
 
 > A página não controla a expiração da sessão. O número exibido no HTML precisa ser igual ao tempo configurado no roteador, caso contrário a comunicação ficará inconsistente.
 
@@ -418,8 +431,8 @@ Não remova ou renomeie esses campos sem consultar a documentação do captive p
 
 ```text
 1. Copiar o projeto para uma pasta de trabalho
-2. Editar wifi-free.html
-3. Atualizar fotos e links em script.js / HTML
+2. Editar config.js
+3. Atualizar fotos e links em config.js
 4. Ajustar cores em style.css
 5. Testar localmente
 6. Copiar arquivos para o captive portal
@@ -600,7 +613,10 @@ Recursos relevantes:
 - Formato compacto para transporte.
 - Possibilidade de receber internet por diferentes origens.
 
-Assim como em qualquer hardware, valide se a versão adquirida oferece a função de **Hotspot / Guest Network with Authentication** ou se exige firmware, pacote ou servidor externo para emitir vouchers.
+Assim como em qualquer hardware, valide se a versão adquirida oferece a
+função de **Hotspot / Guest Network with Authentication**. O núcleo local
+preparado neste repositório pode emitir e persistir vouchers no OpenWrt, mas a
+autorização efetiva ainda depende de um adaptador de firewall testado.
 
 ---
 
@@ -617,7 +633,9 @@ Roteadores de viagem com OpenWrt de fábrica, ou com suporte a pacotes de hotspo
 - Controle de largura de banda.
 - Expiração e revogação de credenciais.
 
-Isso permite preparar um lote com **50 ou 100 vouchers temporários** em poucos minutos, dependendo do firmware e da interface utilizada.
+Com o núcleo local, o operador pode preparar um lote com **50 ou 100 vouchers
+temporários** sem computador durante o evento; a autorização de clientes ainda
+precisa ser validada no firmware e na topologia reais.
 
 > Nem todo equipamento anuncia “captive portal” com a mesma implementação. Alguns oferecem apenas guest network; outros exigem um pacote adicional, um servidor de autenticação ou uma solução como openNDS, CoovaChilli, Nodogsplash ou serviço equivalente.
 

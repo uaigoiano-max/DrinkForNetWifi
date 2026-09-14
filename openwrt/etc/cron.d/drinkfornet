@@ -1,0 +1,2 @@
+# Reconcile sessions after reboot and once per minute.
+* * * * * root /usr/sbin/drinkfornet-adapter reconcile >/dev/null 2>&1

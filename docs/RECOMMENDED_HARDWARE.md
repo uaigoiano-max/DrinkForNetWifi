@@ -12,7 +12,10 @@ O Cudy TR1200 é uma opção compacta para prototipagem e eventos pequenos, com 
 
 > Este é um link de afiliado da Amazon. Se você comprar por ele, posso receber uma comissão sem custo adicional para você.
 
-O roteador não garante vouchers ou captive portal sozinho. Confirme a versão do firmware e valide openNDS, Nodogsplash ou outra solução equivalente antes da compra.
+O roteador não garante vouchers ou captive portal sozinho. Esta referência não
+alega compatibilidade com OpenNDS, NoDogSplash, firmware Cudy ou com o núcleo
+local deste repositório. A validação física está pendente para a revisão exata
+do TR1200 e o firmware que será usado no evento.
 
 ## Powerbank: Anker Laptop Power Bank 25.000 mAh
 
@@ -53,4 +56,3 @@ Prefira Anker, UGREEN ou Baseus, com conectores firmes, revestimento reforçado 
 - [ ] Powerbank não desliga por baixo consumo.
 - [ ] Cabo reserva disponível.
 - [ ] Captive portal testado com a alimentação escolhida.
-
