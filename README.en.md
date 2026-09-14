@@ -14,9 +14,40 @@
 
 The demo shows the visitor experience on desktop and mobile. Voucher creation, authentication and session expiration still depend on the captive portal configured on the router.
 
-> **Model B under review:** the new responsive interface is available in [Pull Request #2](https://github.com/uaigoiano-max/DrinkForNetWifi/pull/2). After the pull request is merged, the link above will automatically show this version on GitHub Pages.
-
 > **Archived version:** the personalized demonstration used before this repository became a reusable template is preserved in the [`v1.0-personal-template`](https://github.com/uaigoiano-max/DrinkForNetWifi/releases/tag/v1.0-personal-template) release. Use it for reference only; new projects should start from the current version.
+
+## 📥 Download the project
+
+Choose the option that fits your workflow:
+
+### Option 1 — Download ZIP
+
+Recommended if you do not use Git:
+
+1. Open the repository on GitHub.
+2. Click the green **Code** button.
+3. Choose **Download ZIP**.
+4. Extract the archive and open the `DrinkForNetWifi` folder.
+5. Edit `config.js` to customize the project.
+
+GitHub generates this ZIP automatically. The repository does not need to store a separate `.zip` file.
+
+### Option 2 — Git
+
+Recommended if you want to receive updates easily:
+
+```bash
+git clone https://github.com/uaigoiano-max/DrinkForNetWifi.git
+cd DrinkForNetWifi
+```
+
+To download future updates:
+
+```bash
+git pull
+```
+
+Then follow the [Quickstart guide](QUICKSTART.md) to test the page and prepare the captive-portal files.
 
 ## What is DrinkForNet?
 
