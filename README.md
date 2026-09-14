@@ -14,6 +14,8 @@
 
 Use o link acima para visualizar a experiência do visitante em um celular, tablet ou computador. Esta é uma demonstração visual; a emissão e a validação de vouchers continuam dependendo do captive portal configurado no roteador.
 
+> **Modelo B em revisão:** a nova interface responsiva está disponível na [Pull Request #2](https://github.com/uaigoiano-max/DrinkForNetWifi/pull/2). Depois do merge, o link acima passa a abrir automaticamente essa versão no GitHub Pages.
+
 ### 🧭 Navegação rápida
 
 - [A ideia e a dinâmica social](#wi-fi-vip-para-quem-sabe-onde-encontrar-a-conexão)
@@ -50,7 +52,7 @@ O projeto combina **design de produto, infraestrutura portátil, captive portal 
 
 ## 👀 Veja a experiência antes de instalar
 
-A landing page foi desenhada para funcionar como uma interface de evento: uma pessoa conecta ao Wi-Fi, reconhece quem está disponibilizando a rede, entende a dinâmica em poucos segundos e chega ao campo de voucher sem precisar navegar por menus complexos.
+A landing page foi desenhada como uma interface de evento: uma pessoa conecta ao Wi-Fi, reconhece quem está disponibilizando a rede, entende que **uma bebida para quem fornece a rede libera 25 minutos**, encontra essa pessoa na pista ou no backstage e chega ao campo de voucher sem navegar por menus complexos.
 
 ### Visão desktop
 
@@ -72,24 +74,29 @@ Para colocar uma cópia no ar rapidamente, siga o [Quickstart](QUICKSTART.md). A
 
 ```text
 ┌─────────────────────────────────────┐
-│ PAGA E LIBERO          REDE ATIVA   │
+│ DRINKFORNET            REDE ATIVA   │
 │                                     │
 │          [foto do anfitrião]        │
 │          [nome da pessoa]           │
 │          [@perfil social]           │
 │                                     │
-│       QUER INTERNET?                │
-│         ME ENCONTRE.                │
+│  ENCONTRE. PAGUE. CONECTE.           │
+│  01 bebida para quem fornece        │
+│  a rede = 25 minutos                │
 │                                     │
 │       [redes sociais]               │
 ├─────────────────────────────────────┤
 │ 01  A REGRA É SIMPLES              │
 │     1 bebida = 25 min de Wi-Fi     │
 │                                     │
-│ 02  ONDE ENCONTRAR                 │
-│     Ponto combinado                 │
+│ 02  COMO FUNCIONA                  │
+│     Encontre · Pague · Receba      │
+│     Conecte                         │
 │                                     │
-│ 03  ACESSAR REDE                  │
+│ 03  ONDE ENCONTRAR                 │
+│     Na pista ou no backstage       │
+│                                     │
+│ 04  ACESSAR REDE                  │
 │     [ CÓDIGO DE ACESSO ]           │
 │     [ LIBERAR WI-FI           → ]  │
 └─────────────────────────────────────┘
