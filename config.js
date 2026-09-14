@@ -1,8 +1,8 @@
 /*
  * DrinkForNet configuration
  *
- * Customize this file for a new host or event. Keep voucher generation,
- * authentication and session expiry configured in the captive portal.
+ * Customize this file for a new host or event. Voucher sessions are fixed at
+ * exactly 25 minutes by the local OpenWrt core; this value is display-only.
  */
 window.DrinkForNetConfig = {
     pageTitle: "Wi-Fi VIP — Pessoa anfitriã",
@@ -16,7 +16,6 @@ window.DrinkForNetConfig = {
     heroDescription:
         "A internet está com uma pessoa no evento. Você encontra essa pessoa, paga uma bebida para ela e recebe acesso temporário.",
     drinkRule: "01 bebida",
-    drinkRuleAccent: "25 min",
     ruleDescription:
         "Defina uma troca clara e voluntária para liberar 25 minutos de acesso à rede VIP.",
     accessMinutes: 25,
