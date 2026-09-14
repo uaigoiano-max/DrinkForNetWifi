@@ -4,10 +4,22 @@ Este guia coloca uma cópia do DrinkForNet para funcionar com o mínimo de passo
 
 ## 1. Baixe e abra o projeto
 
+### Pelo GitHub (Download ZIP)
+
+1. Abra o repositório no GitHub.
+2. Clique em **Code** e depois em **Download ZIP**.
+3. Extraia o arquivo e abra a pasta extraída.
+
+### Pelo Git
+
+Se o Git estiver instalado:
+
 ```bash
 git clone https://github.com/uaigoiano-max/DrinkForNetWifi.git
 cd DrinkForNetWifi
 ```
+
+O download por ZIP é mais simples para começar. O Git é melhor para acompanhar atualizações com `git pull`.
 
 ## 2. Personalize `config.js`
 
@@ -58,4 +70,3 @@ Antes do evento, teste durante algumas horas com o mesmo roteador, powerbank, ca
 | Hardware e cabos recomendados | `docs/RECOMMENDED_HARDWARE.md` |
 | Regras de contribuição | `CONTRIBUTING.md` |
 | Validação local | `scripts/validate-project.mjs` |
-

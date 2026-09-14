@@ -19,6 +19,7 @@ Use o link acima para visualizar a experiência do visitante em um celular, tabl
 ### 🧭 Navegação rápida
 
 - [A ideia e a dinâmica social](#wi-fi-vip-para-quem-sabe-onde-encontrar-a-conexão)
+- [Como baixar o projeto](#-como-baixar-o-projeto)
 - [Veja a experiência antes de instalar](#-veja-a-experiência-antes-de-instalar)
 - [Como personalizar](#-como-personalizar-o-projeto)
 - [Quickstart](QUICKSTART.md)
@@ -26,6 +27,39 @@ Use o link acima para visualizar a experiência do visitante em um celular, tabl
 - [Testes e troubleshooting](#-checklist-de-teste-antes-do-evento)
 - [Segurança e privacidade](#-segurança-privacidade-e-responsabilidade-operacional)
 - [Documentação em inglês](README.en.md)
+
+## 📥 Como baixar o projeto
+
+Escolha a forma mais conveniente:
+
+### Opção 1 — Download ZIP
+
+Indicada para quem não usa Git:
+
+1. Abra o repositório no GitHub.
+2. Clique no botão verde **Code**.
+3. Escolha **Download ZIP**.
+4. Extraia o arquivo e abra a pasta `DrinkForNetWifi`.
+5. Edite o arquivo `config.js` para personalizar o projeto.
+
+O GitHub gera o ZIP automaticamente. Não é necessário manter um arquivo `.zip` dentro do repositório.
+
+### Opção 2 — Git
+
+Indicada para quem quer atualizar o projeto com facilidade:
+
+```bash
+git clone https://github.com/uaigoiano-max/DrinkForNetWifi.git
+cd DrinkForNetWifi
+```
+
+Para baixar atualizações futuras:
+
+```bash
+git pull
+```
+
+Depois, siga o [Quickstart](QUICKSTART.md) para testar a página e preparar os arquivos do captive portal.
 
 ## Wi-Fi VIP para quem sabe onde encontrar a conexão
 
