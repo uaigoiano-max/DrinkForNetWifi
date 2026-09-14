@@ -230,31 +230,27 @@ window.DrinkForNetConfig = {
 };
 ```
 
-O objeto completo também contém os textos do hero, regra da troca, instruções de localização, legenda da galeria e título da página. A edição centralizada evita procurar os mesmos dados em vários arquivos.
+O objeto completo também contém os textos do hero, regra da troca, instruções de localização, legenda da galeria, redes sociais e título da página. A edição centralizada evita procurar os mesmos dados em vários arquivos. O valor de `accessMinutes` deve ser igual ao tempo configurado no roteador.
 
 Se precisar de uma alteração estrutural ou de um texto que não exista no `config.js`, abra `wifi-free.html` e procure pelos seletores correspondentes:
 
 ```html
-<div class="profile-name">
-    Nome do anfitrião
-</div>
+<strong class="profile-name">Nome do anfitrião</strong>
 
-<div class="profile-nickname">
-    @seuperfil
-</div>
+<span class="profile-nickname">@seuperfil</span>
 ```
 
 Altere também:
 
 - o título principal (`<h1>`);
 - a descrição do hero (`.hero-description`);
-- a regra da troca (`.access-copy-values`);
-- o tempo de acesso e a unidade da oferta;
-- os textos de **NA PISTA** e **ATRÁS DO PALCO**;
-- a legenda da galeria;
-- os textos do rodapé.
+- a regra resumida (`.quick-rule`) e a regra detalhada (`.rule`);
+- os cartões de localização (`.location-on-floor` e `.location-backstage`);
+- o formulário e voucher (`#voucherForm`);
+- a galeria (`#gallery`, `#galleryImage`, `#galleryPrev` e `#galleryNext`);
+- os textos do rodapé (`.footer-offer`).
 
-Faça uma busca global pelo nome, perfil, duração e contrapartida anteriores para localizar referências que ainda precisem ser personalizadas antes de publicar.
+Os campos que o `script.js` preenche automaticamente são: `.profile-name`, `.profile-nickname`, `.hero-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.drink-rule` e `.access-minutes`. Faça uma busca global pelo nome, perfil, duração e contrapartida anteriores para localizar referências que ainda precisem ser personalizadas antes de publicar.
 
 ### 2. Atualize as redes sociais
 
@@ -278,14 +274,11 @@ Atualize:
 | X | Link do ícone social |
 | Spotify | Link do ícone social |
 
-Se uma rede não for utilizada, remova o `<a>` completo com o respectivo SVG. Não deixe `href="#"`, pois isso cria links sem destino e pode levar o visitante ao topo da página.
+Deixe o campo vazio em `config.js` para ocultar o ícone correspondente. O `script.js` aplica os links aos elementos `.social-link`; não é necessário editar os SVGs inline. Não deixe `href="#"`, pois isso cria links sem destino.
 
 ### 3. Substitua as fotos
 
-Mantenha os nomes esperados ou altere os caminhos em dois lugares:
-
-1. `wifi-free.html`, na imagem principal e na imagem inicial da galeria.
-2. `script.js`, no array `photos`.
+Mantenha os nomes esperados ou altere os caminhos no array `photos` de `config.js`. A imagem principal e a galeria usam essa mesma configuração.
 
 ```javascript
 const photos = [
@@ -321,13 +314,19 @@ O valor aparece em mais de um trecho da interface. Se a duração deixar de ser 
 
 ### 5. Troque cores e identidade visual
 
-As cores principais estão concentradas em `style.css`. Procure por:
+As cores principais estão concentradas nas variáveis do início de `style.css`:
 
 ```css
-#c6ff4d  /* lima: ação, destaque e status */
-#0a1120  /* navy: fundo e contraste */
-#9ca3af  /* cinza: texto secundário */
+:root {
+    --night: #111827;
+    --cream: #f7f1e8;
+    --pink: #ff725c;
+    --yellow: #ffe36e;
+    --blue: #a9d8ff;
+}
 ```
+
+O breakpoint mobile principal é `700px`. Evite importar fontes, bibliotecas ou imagens externas: o captive portal pode abrir antes de a internet ser liberada.
 
 Para uma personalização segura:
 

@@ -121,6 +121,26 @@ $redir
 
 Do not remove or rename them without checking the captive-portal firmware documentation.
 
+The main selectors used by `script.js` are `.profile-name`, `.profile-nickname`, `.hero-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.drink-rule` and `.access-minutes`. The gallery uses `#gallery`, `#galleryImage`, `#galleryPrev` and `#galleryNext`; the voucher form is `#voucherForm`. Usually you only need to edit `config.js`, not the HTML.
+
+### Replace photos and adapt the visual system
+
+Replace `minha-foto.jpg`, `foto-2.jpg` and `foto-3.jpg` with images you are authorized to publish. If you use different filenames, update the `photos` array in `config.js`. Prefer compressed local images so the captive portal remains usable before external internet access is granted.
+
+The main colors are CSS variables at the top of `style.css`:
+
+```css
+:root {
+    --night: #111827;
+    --cream: #f7f1e8;
+    --pink: #ff725c;
+    --yellow: #ffe36e;
+    --blue: #a9d8ff;
+}
+```
+
+The primary mobile breakpoint is `700px`. After changing the layout, test a narrow viewport and a desktop viewport, keep both HTML entry points identical, and run the validation commands before copying files to the router.
+
 ## 🧱 Architecture
 
 | Layer | Technology |
