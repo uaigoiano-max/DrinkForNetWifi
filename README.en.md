@@ -14,11 +14,13 @@
 
 The demo shows the visitor experience on desktop and mobile. Voucher creation, authentication and session expiration still depend on the captive portal configured on the router.
 
+> **Model B under review:** the new responsive interface is available in [Pull Request #2](https://github.com/uaigoiano-max/DrinkForNetWifi/pull/2). After the pull request is merged, the link above will automatically show this version on GitHub Pages.
+
 > **Archived version:** the personalized demonstration used before this repository became a reusable template is preserved in the [`v1.0-personal-template`](https://github.com/uaigoiano-max/DrinkForNetWifi/releases/tag/v1.0-personal-template) release. Use it for reference only; new projects should start from the current version.
 
 ## What is DrinkForNet?
 
-DrinkForNet is a reusable Wi-Fi landing page for a person who wants to bring a portable network to a party, festival or live event. The network does not need to be official or provided by the event organizers: it is made available by someone at the venue who wants to create a fun interaction with other people.
+DrinkForNet is a reusable Wi-Fi landing page for a person who wants to bring a portable network to a party, festival or live event. The network does not need to be official or provided by the event organizers: it is made available by someone at the venue who wants to create a fun interaction with other people. The new interface makes the core exchange explicit: **one drink for the person providing the network unlocks 25 minutes of access**.
 
 Instead of sharing a global password, the host can define a clear and voluntary exchange, such as:
 
@@ -118,6 +120,26 @@ $redir
 ```
 
 Do not remove or rename them without checking the captive-portal firmware documentation.
+
+The main selectors used by `script.js` are `.profile-name`, `.profile-nickname`, `.hero-description`, `.location-on-floor`, `.location-backstage`, `.footer-offer`, `.drink-rule` and `.access-minutes`. The gallery uses `#gallery`, `#galleryImage`, `#galleryPrev` and `#galleryNext`; the voucher form is `#voucherForm`. Usually you only need to edit `config.js`, not the HTML.
+
+### Replace photos and adapt the visual system
+
+Replace `minha-foto.jpg`, `foto-2.jpg` and `foto-3.jpg` with images you are authorized to publish. If you use different filenames, update the `photos` array in `config.js`. Prefer compressed local images so the captive portal remains usable before external internet access is granted.
+
+The main colors are CSS variables at the top of `style.css`:
+
+```css
+:root {
+    --night: #111827;
+    --cream: #f7f1e8;
+    --pink: #ff725c;
+    --yellow: #ffe36e;
+    --blue: #a9d8ff;
+}
+```
+
+The primary mobile breakpoint is `700px`. After changing the layout, test a narrow viewport and a desktop viewport, keep both HTML entry points identical, and run the validation commands before copying files to the router.
 
 ## 🧱 Architecture
 

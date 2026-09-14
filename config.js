@@ -8,17 +8,15 @@ window.DrinkForNetConfig = {
     pageTitle: "Wi-Fi VIP — Pessoa anfitriã",
     metaDescription:
         "Página para encontrar quem disponibiliza a rede, liberar Wi-Fi VIP e ver fotos e redes sociais.",
-    brandName: "PAGA E LIBERO",
+    brandName: "DRINKFORNET",
     networkLabel: "REDE ATIVA",
     hostName: "Nome do anfitrião",
     nickname: "@seuperfil",
-    heroLabel: "UMA TROCA SIMPLES",
-    heroQuestion: "Quer internet?",
-    heroAnswer: "Encontre-me.",
+    heroLabel: "UMA BRINCADEIRA SOCIAL COM CONEXÃO",
     heroDescription:
-        "Encontre quem está disponibilizando a rede, participe da dinâmica e receba seu acesso ao Wi-Fi VIP na hora.",
-    drinkRule: "Você participa da dinâmica.",
-    drinkRuleAccent: "Eu libero 25 min de Wi-Fi.",
+        "A internet está com uma pessoa no evento. Você encontra essa pessoa, paga uma bebida para ela e recebe acesso temporário.",
+    drinkRule: "01 bebida",
+    drinkRuleAccent: "25 min",
     ruleDescription:
         "Defina uma troca clara e voluntária para liberar 25 minutos de acesso à rede VIP.",
     accessMinutes: 25,
